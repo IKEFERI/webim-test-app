@@ -11,5 +11,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Реализация
 Ссылка: http://webim.oneviewport.ru/
 
-Описание: Задача выполненна на 100%, задействованны все энжпоинты и реализованы все доступные операции над обьектами. 
-Для реализации я использовал: React, Redux, Hooks, Styled-Components, стартовую сборку Create React App.
+Описание: Задача выполненна на 100%, задействованны все энlпоинты и реализованы все доступные операции над обьектами. 
+Для реализации, я использовал: React, Redux, Hooks, Styled-Components, стартовую сборку Create React App.
