@@ -26,7 +26,6 @@ const App = () => {
     const token = useSelector(state => state.authState.token);
     const toForm = useRef(null)
     const executeScroll = () => window.scrollTo(0, toForm.current.offsetTop);
-    console.log(toForm)
     return (
         <StyledApp>
             <AppHeader className="App-header">

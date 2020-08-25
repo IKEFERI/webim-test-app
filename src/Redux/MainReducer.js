@@ -95,8 +95,8 @@ export const createUserThunk = (token, values) => (dispatch) => {
 export const updateUserThunk = (token, values, id) => (dispatch) => {
     dispatch(setIsFetching(true));
     return usersAPI.updateUser(token, values, id).then(response => {
-        afterOperationsUser(token, response.statusText, dispatch);
         dispatch(readUserThunk(token, id));
+        afterOperationsUser(token, response.statusText, dispatch);
     }).catch(err => {
         console.log(err)
         afterOperationsUser(token, "ERROR!", dispatch)
@@ -105,8 +105,9 @@ export const updateUserThunk = (token, values, id) => (dispatch) => {
 export const patchUserThunk = (token, values, id) => (dispatch) => {
     dispatch(setIsFetching(true));
     return usersAPI.patchUser(token, values, id).then(response => {
-        afterOperationsUser(token, response.statusText, dispatch);
         dispatch(readUserThunk(token, id));
+        afterOperationsUser(token, response.statusText, dispatch);
+
     }).catch(err => {
         console.log(err)
         afterOperationsUser(token, "ERROR!", dispatch)

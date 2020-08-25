@@ -16,8 +16,6 @@ const LoginForm = (props) => {
         username: "",
         password: ""
     }
-
-
     const validationSchema = Yup.object({
         username: Yup.string().required("Required"),
         password: Yup.string().required("Required")
@@ -41,7 +39,7 @@ const LoginForm = (props) => {
                             <StyledFormTitle>Log in</StyledFormTitle>
                             <FormikControl control="input" name="username" type="text" label="Username"
                                            placeholder="You're username"/>
-                            <FormikControl control="input" name="password" type="text" label="Password"
+                            <FormikControl control="input" name="password" type="password" label="Password"
                                            placeholder="You're password"/>
                             <StyledButton type="submit"
                                           disabled={!formik.isValid || formik.isSubmitting}>{formik.isSubmitting ? "Log in..." : "Log in"}</StyledButton>
