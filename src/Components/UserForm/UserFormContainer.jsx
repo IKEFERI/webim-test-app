@@ -67,12 +67,12 @@ const UserFormContainer = () => {
         is_active: editUserFormData.is_active ? editUserFormData.is_active : true
     }
     const validationSchema = Yup.object({
-        username: Yup.string().required("Required").max(150).matches(/^[\w.@+-]+$/, {excludeEmptyString: true}),
-        first_name: Yup.string().required("Required").max(30),
-        last_name: Yup.string().required("Required").max(150),
+        username: Yup.string().required("Required").max(150, "Too long!").matches(/^[\w.@+-]+$/, {excludeEmptyString: true}, 'Letters, digits and @/./+/-/_ only.'),
+        first_name: Yup.string().required("Required").max(30, "Too long!"),
+        last_name: Yup.string().required("Required").max(150, "Too long!"),
         password: !editUserFormData.username ?
-            Yup.string().max(128).matches(/^(?=.*[A-Z])(?=.*\d).{8,}$/, {excludeEmptyString: true}).required("Required")
-            : Yup.string().max(128).matches(/^(?=.*[A-Z])(?=.*\d).{8,}$/, {excludeEmptyString: true}),
+            Yup.string().max(128, "Too long!").matches(/^(?=.*[A-Z])(?=.*\d).{8,}$/, {excludeEmptyString: true}, "Required: min 8 symbols - uppercase, lower case, numbers").required("Required")
+            : Yup.string().max(128, "Too long!").matches(/^(?=.*[A-Z])(?=.*\d).{8,}$/, {excludeEmptyString: true}, "Required: min 8 symbols - uppercase, lower case, numbers"),
         is_active: Yup.bool()
     })
 

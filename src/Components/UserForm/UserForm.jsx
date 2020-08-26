@@ -24,7 +24,7 @@ const UserForm = (props) => {
                         <FormikControl control="checkbox" name="is_active" label="Is active" options={props.checkbox}/>
 
                         {props.idEditUser? <StyledButtonRed type="reset" onClick={props.onReset}
-                                                            disabled={!handleForm.isValid || handleForm.isSubmitting}>Create user</StyledButtonRed> : null}
+                                                            disabled={!handleForm.isValid || handleForm.isSubmitting}>Cancel</StyledButtonRed> : null}
                         <StyledButton type="submit"
                                       disabled={!handleForm.isValid || handleForm.isSubmitting}>{handleForm.isSubmitting ? "Processing..." : props.submitBtnText}</StyledButton>
 
