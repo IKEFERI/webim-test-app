@@ -71,8 +71,8 @@ const UserFormContainer = () => {
         first_name: Yup.string().required("Required").max(30, "Too long!"),
         last_name: Yup.string().required("Required").max(150, "Too long!"),
         password: !editUserFormData.username ?
-            Yup.string().max(128, "Too long!").matches(/^(?=.*[A-Z])(?=.*\d).{8,}$/, {excludeEmptyString: true}, "Required: min 8 symbols - uppercase, lower case, numbers").required("Required")
-            : Yup.string().max(128, "Too long!").matches(/^(?=.*[A-Z])(?=.*\d).{8,}$/, {excludeEmptyString: true}, "Required: min 8 symbols - uppercase, lower case, numbers"),
+            Yup.string().max(128, "Too long!").matches(/^(?=.*[A-Z])(?=.*\d).{8,}$/, "Required: min 8 symbols - uppercase, lower case, numbers", {excludeEmptyString: true}).required("Required")
+            : Yup.string().max(128, "Too long!").matches(/^(?=.*[A-Z])(?=.*\d).{8,}$/, "Required: min 8 symbols - uppercase, lower case, numbers", {excludeEmptyString: true}),
         is_active: Yup.bool()
     })
 
